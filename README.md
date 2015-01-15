@@ -12,6 +12,7 @@ few common file types.
 * WAX - Compressed and uncompressed. 
 * MSG
 * PAL
+* CMP
 * 3DO
 
 ## Dependencies
