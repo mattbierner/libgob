@@ -82,7 +82,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8918A65A1A54D1810033DDFE /* libgober.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libgober.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8918A65A1A54D1810033DDFE /* libgob.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libgob.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		894C665D1A67830900F4AF80 /* CmpFileData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmpFileData.h; sourceTree = "<group>"; };
+		894C665E1A67842D00F4AF80 /* CmpFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmpFile.h; sourceTree = "<group>"; };
+		894C665F1A67848400F4AF80 /* Cmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cmp.h; sourceTree = "<group>"; };
 		896AF5681A64C3E200012936 /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		896AF5691A64C3E200012936 /* Bm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bm.h; sourceTree = "<group>"; };
 		896AF56A1A64C3E200012936 /* BmFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmFile.h; sourceTree = "<group>"; };
@@ -152,7 +155,7 @@
 		8918A65B1A54D1810033DDFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8918A65A1A54D1810033DDFE /* libgober.dylib */,
+				8918A65A1A54D1810033DDFE /* libgob.dylib */,
 				89ABBD5B1A54D8BC00B72E36 /* libgob.a */,
 			);
 			name = Products;
@@ -184,6 +187,9 @@
 				896AF57C1A64C3E200012936 /* Wax.h */,
 				896AF57D1A64C3E200012936 /* WaxFile.h */,
 				896AF57E1A64C3E200012936 /* WaxFileData.h */,
+				894C665D1A67830900F4AF80 /* CmpFileData.h */,
+				894C665E1A67842D00F4AF80 /* CmpFile.h */,
+				894C665F1A67848400F4AF80 /* Cmp.h */,
 			);
 			path = gob;
 			sourceTree = "<group>";
@@ -294,7 +300,7 @@
 			);
 			name = gob;
 			productName = gober;
-			productReference = 8918A65A1A54D1810033DDFE /* libgober.dylib */;
+			productReference = 8918A65A1A54D1810033DDFE /* libgob.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		89ABBD5A1A54D8BC00B72E36 /* gob.a */ = {
