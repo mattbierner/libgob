@@ -12,7 +12,7 @@ class Tdo
 {
 public:
     Tdo() { }
-
+    
     Tdo(TdoTextures&& textures, std::vector<TdoObject>&& objects) :
         m_textures(std::move(textures)),
         m_objects(std::move(objects))

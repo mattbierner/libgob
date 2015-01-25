@@ -8,13 +8,13 @@ namespace Df
 {
 
 /**
+    Color palette file.
+    
+    Maps 8-bit color indicies to RGB colors.
 */
 class Pal
 {
 public:
-    /**
-        Create a Pal from a Fme file.
-    */
     static Pal CreateFromFile(const PalFile& pal)
     {
         size_t size = pal.GetDataSize();
@@ -31,6 +31,9 @@ public:
     { }
 
     /**
+        Is the Pal file valid?
+        
+        A valid Pal file provides 256 mappings.
     */
     bool IsValid() const
     {
@@ -51,7 +54,7 @@ public:
     }
     
     /**
-     
+        Lookup the mapping of an individual color in the palette.
     */
     PalFileColor operator[](size_t index) const
     {
