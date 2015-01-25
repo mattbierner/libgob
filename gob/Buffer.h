@@ -67,6 +67,18 @@ public:
         std::copy(start, start + read, output);
         return read;
     }
+    
+    const uint8_t* begin() const { return GetR(0); }
+    
+    const uint8_t* end() const
+    {
+        const auto* start = begin();
+        if (start)
+        {
+            return start + GetDataSize();
+        }
+        return nullptr;
+    }
 };
 
 /**
