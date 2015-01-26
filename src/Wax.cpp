@@ -1,5 +1,7 @@
 #include "Wax.h"
 
+#include <boost/range/counting_range.hpp>
+
 namespace Df
 {
 
@@ -12,7 +14,7 @@ namespace Df
 /*static*/ WaxActionSequence WaxActionSequence::CreateFromFile(const WaxFileSequence& seq, bitmap_cache& cache)
 {
     action_frames frames;
-    for (size_t i = 0; i < seq.GetFramesCount(); ++i)
+    for (size_t i : boost::counting_range(0ul, seq.GetFramesCount()))
         frames.emplace_back(Cell::CreateFromFile(seq.GetFrame(i), cache));
     
     return WaxActionSequence(std::move(frames));
@@ -27,7 +29,7 @@ namespace Df
 /*static*/ WaxAction WaxAction::CreateFromFile(const WaxFileAction& action, bitmap_cache& cache)
 {
     action_views views;
-    for (size_t i = 0; i < action.GetSequencesCount(); ++i)
+    for (size_t i : boost::counting_range(0ul, action.GetSequencesCount()))
         views[i] = WaxActionSequence::CreateFromFile(action.GetSequence(i), cache);
     
     return WaxAction(

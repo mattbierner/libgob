@@ -16,20 +16,24 @@ namespace Df
 template <typename Iterator, typename ResultType>
 struct ObjParser : grammar<Iterator, ResultType>
 {
-    /**
-    */
-    template<typename Name, typename Value>
-    static auto attribute(Name name, Value value)
-    {
-        return boost::proto::deep_copy(name >> lit(':') >> omit[*space] >> value);
-    }
-    
-    /**
-    */
     template<typename Value>
     auto token(Value value)
     {
         return boost::proto::deep_copy(*comment_or_space >> value >> *comment_or_space);
+    }
+    
+    template<typename Value>
+    auto inlineToken(Value value)
+    {
+        return boost::proto::deep_copy(*comment_or_space >> value >> *comment_or_space);
+    }
+
+    /**
+    */
+    template<typename Name, typename Value>
+    auto attribute(Name name, Value value)
+    {
+        return boost::proto::deep_copy(name >> lit(':') >> omit[*space] >> value);
     }
     
     /**

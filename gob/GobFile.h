@@ -64,6 +64,11 @@ public:
     */
     static GobFile CreateFromFile(std::ifstream&& fs);
 
+    /**
+        For a given filename, guess its file type based on its extension.
+    */
+    static FileType GetFileType(const std::string& filename);
+
     GobFile() { }
 
     GobFile(std::unique_ptr<IDataReader>&& dataProvider) :
@@ -93,16 +98,14 @@ public:
     }
     
     /**
-       Does an entry for `filename` exist?
+        Get the name of the file at `index`?
     */
     std::string GetFilename(size_t index) const
     {
-        return m_files[index];
-    }
-    
-    FileType GetFileType(const std::string& filename) const
-    {
-        return m_entries.at(filename).type;
+        if (index < m_files.size())
+            return m_files[index];
+        else
+            return std::string();
     }
     
     /**
@@ -153,11 +156,6 @@ private:
         Maps file extensions used in dark forces to file types.
     */
     static const FileExtMap fileTypeMap;
-
-    /**
-        For a given filename, guess its file type based on its extension.
-    */
-    static FileType TypeForFileName(const std::string& filename);
 
     std::unique_ptr<IDataReader> m_dataProvider;
     std::vector<std::string> m_files;

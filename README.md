@@ -14,6 +14,7 @@ few common file types.
 * PAL
 * CMP
 * 3DO
+* GOL - in progress
 
 ## Dependencies
 * Boost 1.5.x - Header only dep on boost for Spirit.

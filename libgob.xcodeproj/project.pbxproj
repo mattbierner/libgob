@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8957B5D31A7594E100439B16 /* GolFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5D21A7594E100439B16 /* GolFile.cpp */; };
+		8957B5D41A7594E100439B16 /* GolFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5D21A7594E100439B16 /* GolFile.cpp */; };
+		8957B5D91A75AA7E00439B16 /* Gol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8957B5D61A75AA7E00439B16 /* Gol.h */; };
+		8957B5DA1A75AA7E00439B16 /* Gol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8957B5D61A75AA7E00439B16 /* Gol.h */; };
+		8957B5DC1A75AA9A00439B16 /* Gol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5DB1A75AA9A00439B16 /* Gol.cpp */; };
+		8957B5DD1A75AA9A00439B16 /* Gol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5DB1A75AA9A00439B16 /* Gol.cpp */; };
+		8957B5EB1A76000B00439B16 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5EA1A76000B00439B16 /* README.md */; };
+		8957B5EC1A76000B00439B16 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8957B5EA1A76000B00439B16 /* README.md */; };
 		896AF58D1A64C3E200012936 /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 896AF5681A64C3E200012936 /* Bitmap.h */; };
 		896AF58E1A64C3E200012936 /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 896AF5681A64C3E200012936 /* Bitmap.h */; };
 		896AF58F1A64C3E200012936 /* Bm.h in Headers */ = {isa = PBXBuildFile; fileRef = 896AF5691A64C3E200012936 /* Bm.h */; };
@@ -86,6 +94,12 @@
 		894C665D1A67830900F4AF80 /* CmpFileData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmpFileData.h; sourceTree = "<group>"; };
 		894C665E1A67842D00F4AF80 /* CmpFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmpFile.h; sourceTree = "<group>"; };
 		894C665F1A67848400F4AF80 /* Cmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cmp.h; sourceTree = "<group>"; };
+		8957B5D11A7594A200439B16 /* GolFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GolFile.h; sourceTree = "<group>"; };
+		8957B5D21A7594E100439B16 /* GolFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GolFile.cpp; sourceTree = "<group>"; };
+		8957B5D61A75AA7E00439B16 /* Gol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gol.h; sourceTree = "<group>"; };
+		8957B5DB1A75AA9A00439B16 /* Gol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gol.cpp; sourceTree = "<group>"; };
+		8957B5EA1A76000B00439B16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8957B5ED1A76001300439B16 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		896AF5681A64C3E200012936 /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
 		896AF5691A64C3E200012936 /* Bm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bm.h; sourceTree = "<group>"; };
 		896AF56A1A64C3E200012936 /* BmFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmFile.h; sourceTree = "<group>"; };
@@ -146,6 +160,8 @@
 		8918A6511A54D1810033DDFE = {
 			isa = PBXGroup;
 			children = (
+				8957B5ED1A76001300439B16 /* LICENSE */,
+				8957B5EA1A76000B00439B16 /* README.md */,
 				8918A65B1A54D1810033DDFE /* Products */,
 				896AF5671A64C3E200012936 /* gob */,
 				896AF57F1A64C3E200012936 /* src */,
@@ -190,6 +206,8 @@
 				894C665D1A67830900F4AF80 /* CmpFileData.h */,
 				894C665E1A67842D00F4AF80 /* CmpFile.h */,
 				894C665F1A67848400F4AF80 /* Cmp.h */,
+				8957B5D11A7594A200439B16 /* GolFile.h */,
+				8957B5D61A75AA7E00439B16 /* Gol.h */,
 			);
 			path = gob;
 			sourceTree = "<group>";
@@ -197,6 +215,7 @@
 		896AF57F1A64C3E200012936 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				8957B5DB1A75AA9A00439B16 /* Gol.cpp */,
 				896AF5801A64C3E200012936 /* Bm.cpp */,
 				896AF5811A64C3E200012936 /* BmFile.cpp */,
 				896AF5821A64C3E200012936 /* BufferWriter.h */,
@@ -210,6 +229,7 @@
 				896AF58A1A64C3E200012936 /* TdoFile.cpp */,
 				896AF58B1A64C3E200012936 /* Wax.cpp */,
 				896AF58C1A64C3E200012936 /* WaxFile.cpp */,
+				8957B5D21A7594E100439B16 /* GolFile.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -239,6 +259,7 @@
 				896AF5B51A64C3E200012936 /* Wax.h in Headers */,
 				896AF5931A64C3E200012936 /* BmFileData.h in Headers */,
 				896AF5971A64C3E200012936 /* Cell.h in Headers */,
+				8957B5D91A75AA7E00439B16 /* Gol.h in Headers */,
 				896AF5A51A64C3E200012936 /* Msg.h in Headers */,
 				896AF5B91A64C3E200012936 /* WaxFileData.h in Headers */,
 				896AF5AB1A64C3E200012936 /* PalFile.h in Headers */,
@@ -272,6 +293,7 @@
 				896AF5B61A64C3E200012936 /* Wax.h in Headers */,
 				896AF5941A64C3E200012936 /* BmFileData.h in Headers */,
 				896AF5981A64C3E200012936 /* Cell.h in Headers */,
+				8957B5DA1A75AA7E00439B16 /* Gol.h in Headers */,
 				896AF5A61A64C3E200012936 /* Msg.h in Headers */,
 				896AF5BA1A64C3E200012936 /* WaxFileData.h in Headers */,
 				896AF5AC1A64C3E200012936 /* PalFile.h in Headers */,
@@ -364,11 +386,14 @@
 				896AF5C71A64C3E200012936 /* FmeFile.cpp in Sources */,
 				896AF5C11A64C3E200012936 /* Cell.cpp in Sources */,
 				896AF5D11A64C3E200012936 /* Wax.cpp in Sources */,
+				8957B5EB1A76000B00439B16 /* README.md in Sources */,
 				896AF5D31A64C3E200012936 /* WaxFile.cpp in Sources */,
 				896AF5CF1A64C3E200012936 /* TdoFile.cpp in Sources */,
+				8957B5DC1A75AA9A00439B16 /* Gol.cpp in Sources */,
 				896AF5BD1A64C3E200012936 /* BmFile.cpp in Sources */,
 				896AF5CB1A64C3E200012936 /* MsgFile.cpp in Sources */,
 				896AF5C91A64C3E200012936 /* GobFile.cpp in Sources */,
+				8957B5D31A7594E100439B16 /* GolFile.cpp in Sources */,
 				896AF5BB1A64C3E200012936 /* Bm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,11 +406,14 @@
 				896AF5C81A64C3E200012936 /* FmeFile.cpp in Sources */,
 				896AF5C21A64C3E200012936 /* Cell.cpp in Sources */,
 				896AF5D21A64C3E200012936 /* Wax.cpp in Sources */,
+				8957B5EC1A76000B00439B16 /* README.md in Sources */,
 				896AF5D41A64C3E200012936 /* WaxFile.cpp in Sources */,
 				896AF5D01A64C3E200012936 /* TdoFile.cpp in Sources */,
+				8957B5DD1A75AA9A00439B16 /* Gol.cpp in Sources */,
 				896AF5BE1A64C3E200012936 /* BmFile.cpp in Sources */,
 				896AF5CC1A64C3E200012936 /* MsgFile.cpp in Sources */,
 				896AF5CA1A64C3E200012936 /* GobFile.cpp in Sources */,
+				8957B5D41A7594E100439B16 /* GolFile.cpp in Sources */,
 				896AF5BC1A64C3E200012936 /* Bm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

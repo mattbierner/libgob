@@ -68,14 +68,19 @@ public:
         return read;
     }
     
-    const uint8_t* begin() const { return GetR(0); }
-    
-    const uint8_t* end() const
+    template <typename T = uint8_t>
+    const T* Begin() const
     {
-        const auto* start = begin();
+        return GetObjR<T>(0);
+    }
+    
+    template <typename T = uint8_t>
+    const T* End() const
+    {
+        const uint8_t* start = Begin();
         if (start)
         {
-            return start + GetDataSize();
+            return reinterpret_cast<const T*>(start + GetDataSize());
         }
         return nullptr;
     }
@@ -202,5 +207,14 @@ private:
     size_t m_offset;
 };
 
+inline const uint8_t* begin(const Df::IReadableBuffer& buffer)
+{
+    return buffer.Begin<uint8_t>();
+}
+
+inline const uint8_t* end(const Df::IReadableBuffer& buffer)
+{
+    return buffer.End<uint8_t>();
+}
 
 } // Df

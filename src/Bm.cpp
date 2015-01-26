@@ -8,16 +8,14 @@ namespace Df
 {
     size_t count = bm.GetCountSubBms();
     
-    auto bitmaps = std::vector<std::shared_ptr<Bitmap>>();
-    bitmaps.reserve(count);
+    std::vector<std::shared_ptr<Bitmap>> bitmaps(count);
     for (unsigned i = 0; i < count; ++i)
-        bitmaps.push_back(std::make_shared<Bitmap>(std::move(bm.CreateBitmap(i))));
+        bitmaps[i] = std::make_shared<Bitmap>(std::move(bm.CreateBitmap(i)));
     
     return Bm(
         bm.GetFrameRate(),
         bm.IsSwitch(),
         std::move(bitmaps));
 }
-
 
 } // Df

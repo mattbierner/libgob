@@ -276,16 +276,17 @@ Tdo TdoFile::CreateTdo() const
 {
     static const tdo_parser<const char*> p = { };
 
-    const char* start = m_data.GetObjR<char>(0);
-    const char* end = m_data.GetObjR<char>(m_data.GetDataSize() - 1);
-    std::string data(start, m_data.GetDataSize() - 1);
+    const char* start = m_data.Begin<char>();
+    const char* end = m_data.End<char>();
     TdoFileData messages;
     bool result = parse(start, end, p, messages);
-    
-    std::cout << result << std::endl;
-    return Tdo(
-        std::move(boost::get<0>(messages)),
-        std::move(boost::get<1>(messages)));
+    if (result)
+    {
+        return Tdo(
+            std::move(boost::get<0>(messages)),
+            std::move(boost::get<1>(messages)));
+    }
+    return { };
 }
 
 } // Df

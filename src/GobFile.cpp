@@ -21,7 +21,7 @@ namespace Df
 // In-game Level
     {"LEV", FileType::Lev},
     {"INF", FileType::Inf},
-    {"Gol", FileType::Gol},
+    {"GOL", FileType::Gol},
     {"O", FileType::O},
 
 // Messages
@@ -33,7 +33,7 @@ namespace Df
     return GobFile(std::make_unique<FileDataProvider>(std::move(fs)));
 }
 
-/*static*/ FileType GobFile::TypeForFileName(const std::string& filename)
+/*static*/ FileType GobFile::GetFileType(const std::string& filename)
 {
     auto extPos = filename.find(".");
     if (extPos != std::string::npos)
@@ -56,7 +56,7 @@ void GobFile::Init()
         auto entry = GetEntry(i);
         std::string filename(entry.filename);
         m_files.push_back(filename);
-        m_entries[filename] = { TypeForFileName(filename), entry.offset, entry.size };
+        m_entries[filename] = { GetFileType(filename), entry.offset, entry.size };
     }
 }
 

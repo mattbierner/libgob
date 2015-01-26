@@ -22,7 +22,7 @@ const FmeFileHeader* FmeFile::GetHeader() const
 const FmeFileHeader2* FmeFile::GetHeader2() const
 {
     auto* header = GetHeader();
-    if (m_data && header->header2)
+    if (header && header->header2)
     {
         const auto* header2 = m_data->GetObjR<FmeFileHeader2>(m_data->ResolveOffset(header->header2));
         if (header2)

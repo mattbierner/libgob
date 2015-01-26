@@ -46,7 +46,7 @@ public:
     TdoTexture GetTexture(size_t index) const { return m_textures[index]; }
     
     /**
-        Get the list of textures
+        Get the list of textures.
     */
     const TdoTextures& GetTextures() const { return m_textures; }
 

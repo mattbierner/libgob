@@ -61,8 +61,8 @@ Msg MsgFile::CreateMsg() const
 {
     static const msg_parser<const char*> p = { };
 
-    const char* start = m_data.GetObjR<char>(0);
-    const char* end = m_data.GetObjR<char>(m_data.GetDataSize() - 1);
+    const char* start = m_data.Begin<char>();
+    const char* end = m_data.End<char>();
     
     message_list messages;
     bool result = parse(start, end, p, messages);
@@ -71,10 +71,12 @@ Msg MsgFile::CreateMsg() const
     if (result)
     {
         for (const auto& message : messages)
+        {
             messageObject.AddMessage(
                 boost::get<0>(message),
                 boost::get<1>(message),
                 std::move(boost::get<2>(message)));
+        }
     }
     
     return messageObject;
