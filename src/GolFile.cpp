@@ -13,17 +13,19 @@ using namespace boost::spirit;
 using namespace boost::spirit::qi;
 namespace ph = boost::phoenix;
 
+
+BOOST_FUSION_ADAPT_STRUCT(
+    Df::Goal,
+    (Df::GoalType, type)
+    (int, value));
+
 namespace Df
 {
 
 namespace GolParser
 {
 
-using Item = boost::tuple<bool, int>;
-
-using Trigger = boost::tuple<bool, int>;
-
-using Goal = boost::tuple<int, Item, Trigger>;
+using Goal = boost::tuple<int, Df::Goal>;
 
 using Goals = std::vector<Goal>;
 
@@ -40,9 +42,11 @@ struct gol_parser : ObjParser<Iterator, Goals()>
     {
         version = base::element("GOL", base::version_number);
         
-        item = base::attribute("ITEM", int_[ph::at_c<0>(_val) = true]);
+        item = base::attribute("ITEM",
+            int_[_val = ph::construct<Df::Goal>(GoalType::Item, _1)]);
         
-        trigger = base::attribute("TRIG", int_[ph::at_c<0>(_val) = true]);
+        trigger = base::attribute("TRIG",
+            int_[_val = ph::construct<Df::Goal>(GoalType::Trigger, _1)]);
         
         index = base::attribute("GOAL", int_);
         
@@ -64,8 +68,8 @@ struct gol_parser : ObjParser<Iterator, Goals()>
     rule<Iterator, Goals()> goals;
     
     rule<Iterator, int()> index;
-    rule<Iterator, Trigger()> trigger;
-    rule<Iterator, Item()> item;
+    rule<Iterator, Df::Goal()> trigger;
+    rule<Iterator, Df::Goal()> item;
 };
 
 } // GolParser
@@ -85,15 +89,12 @@ Gol GolFile::CreateGol() const
     {
         for (const auto& goal : goals)
         {
-            const GolParser::Trigger& item = boost::get<1>(goal);
-            const GolParser::Item& trigger = boost::get<2>(goal);
+            auto item = boost::get<1>(goal);
 
-            GoalType type = (boost::get<0>(trigger) ? GoalType::Trigger : GoalType::Item);
-            int value = (boost::get<0>(trigger) ? boost::get<1>(trigger) : boost::get<1>(item));
             gol.AddGoal(
                 boost::get<0>(goal),
-                type,
-                value);
+                item.type,
+                item.value);
         }
     }
     return gol;

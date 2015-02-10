@@ -7,12 +7,23 @@ namespace Df
 
 enum class GoalType
 {
+    Unknown,
     Trigger,
     Item
 };
 
 struct Goal
 {
+    Goal() :
+        type(GoalType::Unknown),
+        value(-1)
+    { }
+
+    Goal(GoalType t, int v) :
+        type(t),
+        value(v)
+    { }
+
     GoalType type;
     int value;
 };
@@ -33,6 +44,19 @@ public:
     }
     
     size_t NumberOfGoals() const { return m_goals.size(); }
+    
+    Goal GetGoal(size_t index) const
+    {
+        auto found = m_goals.find(index);
+        if (found != std::end(m_goals))
+        {
+            return found->second;
+        }
+        else
+        {
+            return { GoalType::Unknown, -1 };
+        }
+    }
     
     auto begin() const
     {

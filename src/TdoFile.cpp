@@ -36,10 +36,10 @@ struct transform_attribute<Df::TdoShadingType, std::string, qi::domain>
             val = Df::TdoShadingType::Unknown;
     }
     
-    static void fail(Df::TdoShadingType&) { /*noop*/ }
+    static void fail(Df::TdoShadingType&) { /* noop */ }
 };
 
-}}} // boost::sprint::trains
+}}} // boost::sprint::traits
 
 BOOST_FUSION_ADAPT_STRUCT(
     Df::TdoVertex,
